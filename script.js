@@ -1,12 +1,15 @@
 let playerData = [
-    { name: "Samuel", points: 4, assists: 5, steals: 1, fg: 43, twoPm: 4, threePm: 0, game1: 0, game2: 0, game3: 4, shotPercentage: 0.093 },
-    { name: "Andrew", points: 18, assists: 3, steals: 3, fg: 52, twoPm: 15, threePm: 2, game1: 9, game2: 6, game3: 3, shotPercentage: 0.307 },
-    { name: "Linus", points: 8, assists: 2, steals: 3, fg: 31, twoPm: 8, threePm: 0, game1: 2, game2: 3, game3: 3, shotPercentage: 0.258 },
-    { name: "Martino", points: 1, assists: 4, steals: 3, fg: 8, twoPm: 1, threePm: 0, game1: 0, game2: 0, game3: 1, shotPercentage: 0.125 },
-    { name: "Ben", points: 12, assists: 1, steals: 1, fg: 48, twoPm: 10, threePm: 1, game1: 3, game2: 3, game3: 6, shotPercentage: 0.208 },
-    { name: "Vince", points: 9, assists: 3, steals: 1, fg: 36, twoPm: 5, threePm: 1, game1: 3, game2: 5, game3: 1, shotPercentage: 0.166 },
-    { name: "Lance", points: 5, assists: 4, steals: 1, fg: 24, twoPm: 5, threePm: 0, game1: 1, game2: 3, game3: 1, shotPercentage: 0.208 },
-    { name: "Kyle", points: 2, assists: 3, steals: 0, fg: 13, twoPm: 4, threePm: 0, game1: 2, game2: 0, game3: 0, shotPercentage: 0.153 }
+    { name: "Samuel", points: 2, assists: 1, steals: 5, fga: 19, twoPm: 0, threePm: 1, rebounds: 9, blocks: 0, turnovers: 6, shotPercentage: 5 },
+    { name: "Andrew", points: 17, assists: 5, steals: 3, fga: 29, twoPm: 10 - 4, threePm: 4, rebounds: 6, blocks: 4, turnovers: 3, shotPercentage: 34.40 },
+    { name: "Linus", points: 6, assists: 4, steals: 6, fga: 21, twoPm: 4 - 2, threePm: 2, rebounds: 4, blocks: 0, turnovers: 6, shotPercentage: 14.40 },
+    { name: "Martino", points: 5, assists: 1, steals: 2, fga: 17, twoPm: 3 - 1, threePm: 1, rebounds: 7, blocks: 0, turnovers: 11, shotPercentage: 20 },
+    { name: "Ben", points: 11, assists: 6, steals: 7, fga: 38, twoPm: 11, threePm: 0, rebounds: 50, blocks: 1, turnovers: 4, shotPercentage: 28.90 },
+    { name: "Vince", points: 7, assists: 1, steals: 4, fga: 22, twoPm: 4 - 1, threePm: 1, rebounds: 19, blocks: 0, turnovers: 3, shotPercentage: 18.10 },
+    { name: "Lance", points: 6, assists: 0, steals: 1, fga: 21, twoPm: 6, threePm: 0, rebounds: 10, blocks: 1, turnovers: 4, shotPercentage: 10.35 },
+    { name: "Kyle", points: 0, assists: 5, steals: 8, fga: 14, twoPm: 0, threePm: 0, rebounds: 11, blocks: 0, turnovers: 5, shotPercentage: 0 },
+    { name: "Jeremy", points: 5, assists: 3, steals: 1, fga: 38, twoPm: 4 - 1, threePm: 1, rebounds: 14, blocks: 2, turnovers: 12, shotPercentage: 10.50 },
+    { name: "John", points: 2, assists: 0, steals: 0, fga: 5, twoPm: 2, threePm: 0, rebounds: 2, blocks: 0, turnovers: 3, shotPercentage: 40 },
+    { name: "Ethan", points: 1, assists: 0, steals: 0, fga: 6, twoPm: 1, threePm: 0, rebounds: 6, blocks: 1, turnovers: 4, shotPercentage: 16.60 }
 ];
 
 let playerColors = new Map(); // Store player colors separately
@@ -23,7 +26,7 @@ function populateTable() {
         if (color) {
             row.className = color;
         } else {
-            row.className = index < 4 ? "team-1" : "team-2";
+            row.className = index < 5 ? "team-1" : "team-2";
             // Store the assigned color for the player
             playerColors.set(player.name, row.className);
         }
@@ -33,12 +36,12 @@ function populateTable() {
         <td>${player.points}</td>
         <td>${player.assists}</td>
         <td>${player.steals}</td>
-        <td>${player.fg}</td>
+        <td>${player.fga}</td>
         <td>${player.twoPm}</td>
         <td>${player.threePm}</td>
-        <td>${player.game1}</td>
-        <td>${player.game2}</td>
-        <td>${player.game3}</td>
+        <td>${player.rebounds}</td>
+        <td>${player.blocks}</td>
+        <td>${player.turnovers}</td>
         <td>${player.shotPercentage}</td>
       `;
         tableBody.appendChild(row);
@@ -65,12 +68,12 @@ function updateTable() {
         <td>${player.points}</td>
         <td>${player.assists}</td>
         <td>${player.steals}</td>
-        <td>${player.fg}</td>
+        <td>${player.fga}</td>
         <td>${player.twoPm}</td>
         <td>${player.threePm}</td>
-        <td>${player.game1}</td>
-        <td>${player.game2}</td>
-        <td>${player.game3}</td>
+        <td>${player.rebounds}</td>
+        <td>${player.blocks}</td>
+        <td>${player.turnovers}</td>
         <td>${player.shotPercentage}</td>
       `;
         tableBody.appendChild(row);
